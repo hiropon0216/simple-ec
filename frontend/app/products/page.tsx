@@ -1,6 +1,12 @@
 // app/products/page.tsx
 
-const products = [
+type Product = {
+  id: number;
+  name: string;
+  price: number;
+};
+
+const products: Product[] = [
   { id: 1, name: "Sample Product A", price: 1200 },
   { id: 2, name: "Sample Product B", price: 1800 },
   { id: 3, name: "Sample Product C", price: 2200 },
@@ -19,6 +25,7 @@ export default function ProductsPage() {
           >
             <h2 className="text-lg font-semibold mb-2">{product.name}</h2>
             <p className="text-gray-700 mb-2">¥{product.price.toLocaleString()}</p>
+
             <button className="w-full bg-gray-900 text-white py-2 rounded-md text-sm hover:bg-gray-700 transition">
               Add to Cart
             </button>

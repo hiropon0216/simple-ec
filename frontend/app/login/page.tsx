@@ -1,10 +1,25 @@
+"use client";
+
+import { useState } from "react";
+
 export default function LoginPage() {
+  // TypeScript では useState の型を明示できる
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  // フォーム送信時の型
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Email:", email);
+    console.log("Password:", password);
+  };
+
   return (
     <div className="flex justify-center items-center min-h-[60vh]">
       <div className="w-full max-w-sm bg-white p-8 rounded-xl shadow-md">
         <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
 
-        <form className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
             <label htmlFor="email" className="block text-sm font-medium mb-1">
               Email
@@ -14,6 +29,8 @@ export default function LoginPage() {
               type="email"
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
               placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} // ← TSで型が推論される
             />
           </div>
 
@@ -26,6 +43,8 @@ export default function LoginPage() {
               type="password"
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
               placeholder="********"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} // ← これも型推論OK
             />
           </div>
 
