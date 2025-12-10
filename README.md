@@ -1,6 +1,6 @@
 # Simple EC Platform (Next.js × FastAPI × Supabase)
 
-本リポジトリは、**Next.js（フロントエンド） × FastAPI（バックエンド） × Supabase（DB/認証）** を用いて構築した  
+本リポジトリは、**Next.js（フロントエンド） × REST API（バックエンド） × Supabase（DB/認証）** を用いて構築した  
 シンプルなECアプリケーション
 
 ---
