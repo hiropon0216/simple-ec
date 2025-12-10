@@ -25,12 +25,17 @@
 - React Server Components
 
 ### **Backend**
-- FastAPI（Python）
-- Uvicorn
+- Spring Boot 3（REST API）
+- JWT 認証（Supabase Auth のトークン検証）
+- Spring Data JPA
+- PostgreSQL（Supabase）
+- Flyway
+- Lombok
 
 ### **Database / Auth**
 - Supabase (PostgreSQL)
-- RLS（Row Level Security）を用いた安全な認証・データ管理
+- Supabase Auth（JWT）
+- RLS（Row Level Security）
 
 ### **Infrastructure / DevOps**
 - Vercel（フロントデプロイ）
