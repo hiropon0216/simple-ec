@@ -1,10 +1,8 @@
-package com.example.simpleec.controller;
+package com.example.simpleec.api.product;
 
-import com.example.simpleec.dto.ProductResponse;
+import com.example.simpleec.domain.product.Product;
 import com.example.simpleec.service.ProductService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +17,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<ProductResponse> getProducts() {
+    public List<Product> getProducts() {
         return productService.findAll();
     }
 }

@@ -1,6 +1,8 @@
 package com.example.simpleec.service;
 
-import com.example.simpleec.dto.ProductResponse;
+import com.example.simpleec.domain.product.Product;
+import com.example.simpleec.domain.product.ProductRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,10 +10,13 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    public List<ProductResponse> findAll() {
-        return List.of(
-            new ProductResponse(1L, "Sample Product A", 1200),
-            new ProductResponse(2L, "Sample Product B", 1800)
-        );
+    private final ProductRepository productRepository;
+
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
+    public List<Product> findAll() {
+        return productRepository.findAll();
     }
 }
